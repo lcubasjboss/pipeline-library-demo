@@ -9,7 +9,7 @@ def ejecutar() {
                 echo "Llegamos"
                 echo "${BUILD_NUMBER}"
                 echo "${WORKSPACE}"
-                ls -ltr
+                sh "ls -ltr"
             echo "${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}.jtl"
     }
                 // sh "jmeter.sh -n -t  ${WORKSPACE}/Pruebatecnica.jmx -l  ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}.jtl -JSC00.${threadscount} -Jlg.${threadsByStep} -Jlg.${timeSecByStep} -Jlg.${rampUpSec} -Jlg.${holdDuration} -Jlg.${threadsToStop} -Jlg.${shutdownTime} -e -o ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html"                 
