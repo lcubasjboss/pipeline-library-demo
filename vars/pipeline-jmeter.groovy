@@ -1,4 +1,3 @@
-@Library(['pipeline-yastas']) _
 pipeline {
   agent any
   stages {
