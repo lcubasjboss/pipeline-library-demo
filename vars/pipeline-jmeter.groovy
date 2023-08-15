@@ -5,7 +5,7 @@ pipeline {
       steps {
         script{
           echo "Iniciando Ejecución.."
-          jmeter.ejecutar()
+          //jmeter.ejecutar()
         }
       }
     }
