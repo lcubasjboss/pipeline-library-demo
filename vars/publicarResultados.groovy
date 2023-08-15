@@ -10,7 +10,6 @@ def publicarResultados() {
       //              reportDir: 'output',
       //              reportFiles: 'index.html',
       //              reportName: 'JMeter Report'
-                ])
-                */
+      //          ])
     }              
 }
