@@ -24,5 +24,13 @@ def publicarResultados() {
     //env.EMAIL_BUILD_STATUS = "FAILED"
     script {
       echo "Publicando Resultados - groovy file"
+        publishHTML(target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'output',
+                    reportFiles: 'index.html',
+                    reportName: 'JMeter Report'
+                ])
     }              
 }
