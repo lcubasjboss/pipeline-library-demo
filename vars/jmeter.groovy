@@ -8,6 +8,7 @@ def ejecutar() {
                 //Ejecutando script de JMeter por linea de comandos
                 echo "Llegamos"
                 echo "${BUILD_NUMBER}"
+                echo "${WORKSPACE}"
     }
                 // sh "jmeter.sh -n -t  ${WORKSPACE}/Pruebatecnica.jmx -l  ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}.jtl -JSC00.${threadscount} -Jlg.${threadsByStep} -Jlg.${timeSecByStep} -Jlg.${rampUpSec} -Jlg.${holdDuration} -Jlg.${threadsToStop} -Jlg.${shutdownTime} -e -o ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html"                 
                 // sh "cp -rf ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html output"
