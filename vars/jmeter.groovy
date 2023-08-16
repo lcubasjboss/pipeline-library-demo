@@ -1,4 +1,6 @@
 def ejecutar() {                
+     // Clean before build
+    cleanWs()
     println "Ejecutando JMeter.. - groovy file"
     //env.EMAIL_BUILD_STATUS = "FAILED"
     script {
@@ -27,12 +29,12 @@ sh ("git config -l")
     withCredentials([usernamePassword(credentialsId: '425befb0-743f-4979-ba65-88d35fd69480', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
     echo "Ejecutando comandos git"
     sh("git init .")
-    sh("git remote add origin git@github.com:lcubasjboss/performance-test-results.git")
+    sh("git remote add performance-test-results git@github.com:lcubasjboss/performance-test-results.git")
     sh("tar -zcvf ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html.tar.gz ./${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html")
     sh("git checkout -b main")
     sh("git add ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html.tar.gz")
     sh("git commit -m Subiendo reporte ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html")
-    sh("git push origin main")
+    sh("git push performance-test-results main")
     //sh("git tag -a some_tag -m 'Jenkins'")
     //sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
 }
