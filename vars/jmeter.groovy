@@ -29,7 +29,7 @@ sh ("git config -l")
     withCredentials([usernamePassword(credentialsId: '425befb0-743f-4979-ba65-88d35fd69480', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
     echo "Ejecutando comandos git"
     sh("git init .")
-    //sh("git remote add performance-test-results git@github.com:lcubasjboss/performance-test-results.git")
+    sh("git remote add performance-test-results git@github.com:lcubasjboss/performance-test-results.git")
     sh("tar -zcvf ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html.tar.gz ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html")
     sh("git checkout -b main")
     sh("git add ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html.tar.gz")
