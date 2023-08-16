@@ -19,7 +19,7 @@ def ejecutar() {
 script {
     echo "Setting Git configs"
 git config --global user.name "Jenkins-Bitbucket Integration"
-git config --global user.email jenkins-bitbucket-integration@gentera.com.mx
+git config --global user.email "jenkins-bitbucket-integration@gentera.com.mx"
 git config -l
     withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
     echo "Ejecutando comandos git"
