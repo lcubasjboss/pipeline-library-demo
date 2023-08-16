@@ -29,6 +29,7 @@ git config -l
     
     //            env.EMAIL_BUILD_STATUS = "SUCCESS"
 }
+}
 
 def publicarResultados() {                
     println "Publicando Resultados .."
