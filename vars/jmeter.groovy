@@ -39,6 +39,7 @@ sh("git config --global user.email jenkins-bitbucket-integration@gentera.com.mx"
     //sh("git tag -a some_tag -m 'Jenkins'")
     //sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
 }
+      sh("git remote -v")
     sh("rm -rf .git")
     //            env.EMAIL_BUILD_STATUS = "SUCCESS"
 }
