@@ -27,16 +27,16 @@ sh("git config --global user.email jenkins-bitbucket-integration@gentera.com.mx"
 //sh ("git config -l")
     echo "Ejecutando comandos git"
     sh("git init .")
-    //sh("git remote add performance-test-results4 git@github.com:lcubasjboss/performance-test-results.git")
-    sh("git remote add performance-test-results4 https://github.com/lcubasjboss/performance-test-results.git")
+    //sh("git remote add performance-test-results5 git@github.com:lcubasjboss/performance-test-results.git")
+    sh("git remote add performance-test-results5 https://github.com/lcubasjboss/performance-test-results.git")
     sh("tar -zcvf ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html.tar.gz ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html")
-    sh("git checkout -b main4")
+    sh("git checkout -b main5")
     sh("git add ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html.tar.gz")
     sh("git commit -m 'Subiendo reporte ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html'")
     //withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
     withCredentials([usernamePassword(credentialsId: '393376bc-8463-4ab3-b2fb-3029d48396dc', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
      //  sh("git push performance-test-results3 main3")
-          sh("git push https://${USERNAME}:${PASSWORD}@performmance-test-results main4")
+          sh("git push https://${USERNAME}:${PASSWORD}@performmance-test-results.git main5")
     //sh("git tag -a some_tag -m 'Jenkins'")
     //sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
 }
