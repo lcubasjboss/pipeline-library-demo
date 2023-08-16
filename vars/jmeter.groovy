@@ -1,6 +1,4 @@
 def ejecutar() {                
-     // Clean before build
-    cleanWs()
     println "Ejecutando JMeter.. - groovy file"
     //env.EMAIL_BUILD_STATUS = "FAILED"
     script {
