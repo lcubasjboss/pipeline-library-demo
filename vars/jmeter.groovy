@@ -20,10 +20,11 @@ script {
     echo "Setting Git configs"
     sh("git --version")
 sh ("git config -l")    
-sh("git config --global user.name Jenkins-Bitbucket Integration")
+sh("git config --global user.name jenkins-bitbucket-integration")
 sh("git config --global user.email jenkins-bitbucket-integration@gentera.com.mx")
 sh ("git config -l")
-    withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+    //withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+    withCredentials([usernamePassword(credentialsId: '425befb0-743f-4979-ba65-88d35fd69480', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
     echo "Ejecutando comandos git"
     //sh("git tag -a some_tag -m 'Jenkins'")
     //sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
