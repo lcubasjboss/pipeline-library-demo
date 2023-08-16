@@ -18,11 +18,11 @@ def ejecutar() {
 //Setting Git
 script {
     echo "Setting Git configs"
-    
-//git config --global user.name "Jenkins-Bitbucket Integration"
-//git config --global user.email "jenkins-bitbucket-integration@gentera.com.mx"
+    sh("git --version")
+sh ("git config -l")    
+sh("git config --global user.name Jenkins-Bitbucket Integration")
+sh("git config --global user.email jenkins-bitbucket-integration@gentera.com.mx")
 sh ("git config -l")
-sh("git --version")
     withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
     echo "Ejecutando comandos git"
     //sh("git tag -a some_tag -m 'Jenkins'")
