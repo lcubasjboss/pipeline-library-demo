@@ -23,8 +23,8 @@ git config --global user.email "jenkins-bitbucket-integration@gentera.com.mx"
 git config -l
     withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
     echo "Ejecutando comandos git"
-    #sh("git tag -a some_tag -m 'Jenkins'")
-    #sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
+    //sh("git tag -a some_tag -m 'Jenkins'")
+    //sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
 }
     
     //            env.EMAIL_BUILD_STATUS = "SUCCESS"
