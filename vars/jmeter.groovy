@@ -6,12 +6,12 @@ def ejecutar() {
                 timestamp = fecha.format("yyMMdd.HHmm", TimeZone.getTimeZone('UTC'))
                 //Descargar archivo jmx y csv desde repositorio de Bitbucket de Performance
                 //Ejecutando script de JMeter por linea de comandos
-                echo "Llegamos"
-                echo "${BUILD_NUMBER}"
-                echo "${WORKSPACE}"
-                sh "ls -ltr"
-            echo "${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}.jtl"
-        sh "ls -ltr ${WORKSPACE}/01_Escenarios/"
+                //echo "Llegamos"
+                //echo "${BUILD_NUMBER}"
+                //echo "${WORKSPACE}"
+                //sh "ls -ltr"
+            //echo "${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}.jtl"
+        //sh "ls -ltr ${WORKSPACE}/01_Escenarios/"
         sh("mkdir ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html")
         sh("touch ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html/test")
     }
@@ -20,25 +20,26 @@ def ejecutar() {
 //Setting Git
 script {
     echo "Setting Git configs"
-    sh("git --version")
-sh ("git config -l")    
+    //sh("git --version")
+//sh ("git config -l")    
 sh("git config --global user.name jenkins-bitbucket-integration")
 sh("git config --global user.email jenkins-bitbucket-integration@gentera.com.mx")
-sh ("git config -l")
+//sh ("git config -l")
     echo "Ejecutando comandos git"
     sh("git init .")
-    //sh("git remote add performance-test-results git@github.com:lcubasjboss/performance-test-results.git")
-    sh("git remote add performance-test-results https://github.com/lcubasjboss/performance-test-results.git")
+    //sh("git remote add performance-test-results1 git@github.com:lcubasjboss/performance-test-results.git")
+    sh("git remote add performance-test-results1 https://github.com/lcubasjboss/performance-test-results.git")
     sh("tar -zcvf ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html.tar.gz ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html")
     sh("git checkout -b main")
     sh("git add ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html.tar.gz")
     sh("git commit -m 'Subiendo reporte ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html'")
     //withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
     withCredentials([usernamePassword(credentialsId: '425befb0-743f-4979-ba65-88d35fd69480', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-       sh("git push performance-test-results main")
+       sh("git push performance-test-results1 main")
     //sh("git tag -a some_tag -m 'Jenkins'")
     //sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
 }
+    sh("rm -rf .git")
     //            env.EMAIL_BUILD_STATUS = "SUCCESS"
 }
 }
