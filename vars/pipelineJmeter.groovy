@@ -16,6 +16,7 @@ def call(Map pipelineParams) {
                   echo "Hola desde stage Test"
                   echo pipelineParams.surname
                   //echo "${pipelineParams.surname}"
+                  echo "Environment: pipelineParams.ENVIRONMENT"
                 }
             }
         }
