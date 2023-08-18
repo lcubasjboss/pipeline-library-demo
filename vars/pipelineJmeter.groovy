@@ -17,7 +17,7 @@ def call(Map pipelineParams) {
                   echo pipelineParams.surname
                   //echo "${pipelineParams.surname}"
                   //echo "Environment: ${pipelineParams.ENVIRONMENT}"
-                  echo ${pipelineParams.ENVIRONMENT}
+                  echo "${pipelineParams.ENVIRONMENT}"
                       //print "DEBUG: parameter isFoo = ${params.isFoo}"
                 }
             }
