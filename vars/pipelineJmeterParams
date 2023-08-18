@@ -1,4 +1,4 @@
-// vars/pipelineJmeterTest.groovy
+// vars/pipelineJmeterTestParams.groovy
 //def call(Map pipelineParams) {
 //def call()
 def call(body) {
