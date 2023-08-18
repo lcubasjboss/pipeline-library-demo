@@ -19,8 +19,10 @@ def call(Map pipelineParams) {
                   //echo "Environment: ${pipelineParams.ENVIRONMENT}"
                  // echo "${pipelineParams.ENVIRONMENT}"
                       //print "DEBUG: parameter isFoo = ${params.isFoo}"
+                    script {
                       sayHello("FUNCIONANDO SAY HELLO")
                       sayHello.saludo("FUNCIONANDO SAY HELLO - saludo")
+                    }
                 }
             }
         }
