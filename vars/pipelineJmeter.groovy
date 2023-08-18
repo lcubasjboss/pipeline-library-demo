@@ -7,11 +7,15 @@ def call(Map pipelineParams) {
             stage('Build') {
                 steps {
                   echo "Hola desde stage Build"
+                  echo pipelineParams.name
+                  //echo "${pipelineParams.name}"
                 }
             }
             stage ('Test') {
                 steps {
                   echo "Hola desde stage Test"
+                  echo pipelineParams.surname
+                  //echo "${pipelineParams.surname}"
                 }
             }
         }
