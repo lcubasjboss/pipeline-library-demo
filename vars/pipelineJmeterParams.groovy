@@ -7,7 +7,7 @@ def call(body) {
     //body.delegate = pipelineParams
     //body()
    echo "variables"
-   // pipelineParams.each { println(it) }
+     pipelineParams.each { println(it) }
      params.each {
     println it.key + " = " + it.value
   }
@@ -27,7 +27,8 @@ def call(body) {
                   //echo "Environment: ${pipelineParams.ENVIRONMENT}"
                  // echo "${pipelineParams.ENVIRONMENT}"                  
                     println "DEBUG: parameter ENVIRONMENT = ${params.ENVIRONMENT}"
-                       println "DEBUG: parameter URL = ${params.link}"
+                       println "DEBUG: parameter link - params = ${params.link}"
+                    println "DEBUG: parameter link - pipelineParams = ${pipelineParams.link}"
                     script {
                       sayHello("FUNCIONANDO SAY HELLO")
                       sayHello.saludo("FUNCIONANDO SAY HELLO - saludo")
