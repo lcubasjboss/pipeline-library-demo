@@ -1,4 +1,5 @@
-def ejecutar() {                
+//def ejecutar() {                
+def ejecutar(params) {                
     println "Checando variables que vienen de Jenkins Job"
       params.each {
     println it.key + " = " + it.value
