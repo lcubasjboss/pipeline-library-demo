@@ -18,7 +18,8 @@ def call(body) {
             script{
               echo "Iniciando Ejecución desde pipelineJmeter.groovy.."
               //echo "Iniciando Ejecución.."
-              jmeter.ejecutar(params)
+              //jmeter.ejecutar(params)
+                jmeter.ejecutar(params)
             }
        }
      }
