@@ -27,6 +27,7 @@ def call(body) {
                   //echo "Environment: ${pipelineParams.ENVIRONMENT}"
                  // echo "${pipelineParams.ENVIRONMENT}"                  
                     println "DEBUG: parameter ENVIRONMENT = ${params.ENVIRONMENT}"
+                       println "DEBUG: parameter URL = ${params.URL}"
                     script {
                       sayHello("FUNCIONANDO SAY HELLO")
                       sayHello.saludo("FUNCIONANDO SAY HELLO - saludo")
