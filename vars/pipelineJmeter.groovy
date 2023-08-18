@@ -1,15 +1,18 @@
 // vars/pipelineJmeter.groovy
-//def call(Map pipelineParams) {
-def call() {
+def call(Map pipelineParams) {
+//def call() {
     pipeline {
         agent any
         stages {
             stage('Build') {
-               echo "Hola desde stage Build"
+                steps {
+                  echo "Hola desde stage Build"
+                }
             }
-
             stage ('Test') {
-                echo "Hola desde stage Test"
+                steps {
+                  echo "Hola desde stage Test"
+                }
             }
         }
     }
