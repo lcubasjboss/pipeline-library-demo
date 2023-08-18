@@ -6,7 +6,11 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = pipelineParams
     body()
+   echo "variables"
     pipelineParams.each { println(it) }
+     params.each {
+    println it.key + " = " + it.value
+  }
     pipeline {
         agent any
         stages {
