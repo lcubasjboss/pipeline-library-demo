@@ -2,10 +2,10 @@
 //def call(Map pipelineParams) {
 //def call()
 def call(body) {
-    //def pipelineParams= [:]
-    //body.resolveStrategy = Closure.DELEGATE_FIRST
-    //body.delegate = pipelineParams
-    //body()
+    def pipelineParams= [:]
+    body.resolveStrategy = Closure.DELEGATE_FIRST
+    body.delegate = pipelineParams
+    body()
    echo "variables"
      pipelineParams.each { println(it) }
      params.each {
