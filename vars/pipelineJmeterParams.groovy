@@ -35,7 +35,7 @@ def call(body) {
     //   steps {
     //       script{
     //        echo "Subiendo resultados desde pipelineJmeter.groovy.."
-              echo "Subiendo resultados.."
+    //          echo "Subiendo resultados.."
     //        jmeter.subirResultados()
    // }
   //}
