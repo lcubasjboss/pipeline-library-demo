@@ -26,7 +26,9 @@ def call(body) {
                   //echo pipelineParams.surname
                   //echo "Environment: ${pipelineParams.ENVIRONMENT}"
                  // echo "${pipelineParams.ENVIRONMENT}"
-                    echo pipelineParams.ENVIRONMENT
+                    //echo pipelineParams.ENVIRONMENT
+                    println params.ENVIRONMENT
+                    println params.ENVIRONMENT.name = params.ENVIRONMENT.value
                     script {
                       sayHello("FUNCIONANDO SAY HELLO")
                       sayHello.saludo("FUNCIONANDO SAY HELLO - saludo")
