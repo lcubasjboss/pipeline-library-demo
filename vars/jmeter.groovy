@@ -4,7 +4,9 @@ def ejecutar(params) {
       params.each {
     println it.key + " = " + it.value
   }
-    println System.getenv("threadscount") 
+    //println System.getenv("threadscount") 
+    def tc = System.getenv("threadscount")
+    println tc
     println "Ejecutando JMeter.."
     script {
         fecha = new Date()
