@@ -4,6 +4,10 @@ def ejecutar(params) {
       params.each {
     println it.key + " = " + it.value
   }
+   params.each {param ->
+  println " '${param.key.trim()}' -> '${param.value.trim()}' "
+}
+    
     print 'DEBUG: parameter TC = ' + params.threadscount
 print "DEBUG: parameter TC = ${params.threadscount}"
 
@@ -20,8 +24,9 @@ print "DEBUG: parameter TC = ${params.threadscount}"
     }
     //sh "jmeter.sh -n -t  ${WORKSPACE}/01_Escenarios/Pruebatecnica.jmx -l  ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}.jtl -JSC00.${threadscount} -Jlg.${threadsByStep} -Jlg.${timeSecByStep} -Jlg.${rampUpSec} -Jlg.${holdDuration} -Jlg.${threadsToStop} -Jlg.${shutdownTime} -e -o ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html"                 
     //Descomentar
-    //sh "jmeter.sh -n -t  ${WORKSPACE}/01_Escenarios/Pruebatecnica.jmx -l  ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}.jtl -JSC00.${params.threadscount} -Jlg.${params.threadsByStep} -Jlg.${params.timeSecByStep} -Jlg.${params.rampUpSec} -Jlg.${params.holdDuration} -Jlg.${params.threadsToStop} -Jlg.${params.shutdownTime} -e -o ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html"                 
-    //sh "cp -rf ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html output"
+    sh "jmeter.sh -n -t  ${WORKSPACE}/01_Escenarios/Pruebatecnica.jmx -l  ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}.jtl -JSC00.${params.threadscount} -Jlg.${params.threadsByStep} -Jlg.${params.timeSecByStep} -Jlg.${params.rampUpSec} -Jlg.${params.holdDuration} -Jlg.${params.threadsToStop} -Jlg.${params.shutdownTime} -e -o ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html"                 
+    sh "cp -rf ${WORKSPACE}/SC00_CrearReceta_UAT_5_VU_${timestamp}_html output"
+    sh "ls -ltr output"
 }
 
 def publicarResultados() {                
