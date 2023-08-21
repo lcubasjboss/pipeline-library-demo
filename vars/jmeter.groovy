@@ -4,6 +4,10 @@ def ejecutar(params) {
       params.each {
     println it.key + " = " + it.value
   }
+    print 'DEBUG: parameter TC = ' + params.threadscount
+print "DEBUG: parameter TC = ${params.threadscount}"
+
+    
     //println System.getenv("threadscount") 
     //def tc = System.getenv("threadscount")
     //println tc
