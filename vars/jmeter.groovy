@@ -7,13 +7,10 @@ def ejecutar(params) {
   params.each {param ->
     println " '${param.key.trim()}' -> '${param.value.trim()}' "
   }
-  println "Branch"
-  println env.branch
+  println "BRANCH"
   println scm.branches[0].name
-  println scm.branches[1].name
-  println scm.branches[2].name
-  println scm.branches[3].name
-  println scm.branches[4].name
+  println "GIT REPO"
+  println scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
   println "Ejecutando JMeter.."
   script {
        fecha = new Date()
