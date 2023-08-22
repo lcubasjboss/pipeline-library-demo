@@ -10,6 +10,10 @@ def ejecutar(params) {
   println "Branch"
   println env.branch
   println scm.branches[0].name
+  println scm.branches[1].name
+  println scm.branches[2].name
+  println scm.branches[3].name
+  println scm.branches[4].name
   println "Ejecutando JMeter.."
   script {
        fecha = new Date()
