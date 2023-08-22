@@ -62,9 +62,13 @@ def removerCarpetas() {
 
 def subirResultados() {
   println "Subiendo Resultados .."
-  unstash 'output'
+  /*
+  stash 'output'
   echo "output files"
   sh("ls -ltr output")
+  */
+  println $BUILD_TAG
+  println BUILD_TAG
 }
 def imprimir(branch,repo) {
   println "IMprimineod desde imprimir method"
