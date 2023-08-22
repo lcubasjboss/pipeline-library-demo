@@ -58,6 +58,6 @@ def subirResultados() {
      }
 }
 def imprimir(branch,repo) {
-  println url
+  println repo
   println branch
 }
