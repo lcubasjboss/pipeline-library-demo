@@ -7,13 +7,9 @@ def ejecutar(params) {
   params.each {param ->
     println " '${param.key.trim()}' -> '${param.value.trim()}' "
   }
-  print 'DEBUG: parameter TC = ' + params.threadscount
-  print "DEBUG: parameter TC = ${params.threadscount}"    
+  println "Branch"
   println env.branch
-  def myvariables = getBinding().getVariables()
-for (v in myvariables) {
-   echo "${v} " + myvariables.get(v)
-}
+  println scm.branches[0].name
   println "Ejecutando JMeter.."
   script {
        fecha = new Date()
