@@ -68,11 +68,16 @@ def subirResultados() {
   sh("ls -ltr output")
   */
     sh "printenv"
-  
-
+ 
+ sh 'echo "I can access $BUILD_TAG"'
     echo "The build number is ${env.BUILD_NUMBER}"
                 echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}"
                 sh 'echo "I can access $BUILD_NUMBER in shell command as well."'
+
+  fecha = new Date()
+       timestamp = fecha.format("yyMMdd.HHmm", TimeZone.getTimeZone('UTC'))
+       def var = ${BUILD_TAG}-${timestamp}
+  println var
   
 }
 def imprimir(branch,repo) {
