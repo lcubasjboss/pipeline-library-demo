@@ -76,7 +76,8 @@ def subirResultados() {
 
   fecha = new Date()
        timestamp = fecha.format("yyMMdd.HHmm", TimeZone.getTimeZone('UTC'))
-       def var = BUILD_TAG-${timestamp}
+       //def var = BUILD_TAG-${timestamp}
+  def var = BUILD_TAG+timestamp
   println var
   
 }
