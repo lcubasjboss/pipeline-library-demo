@@ -19,7 +19,6 @@ def call(body) {
               echo "Iniciando Ejecución desde pipelineJmeter.groovy.."
               //echo "Iniciando Ejecución.."
               //jmeter.ejecutar(params)
-                jmeter.ejecutar(params)
             }
        }
      }
@@ -28,7 +27,7 @@ def call(body) {
             script{
               echo "Publicando Resultados desde pipelineJmeter.groovy.."
               //echo "Publicando Resultados.."
-              jmeter.publicarResultados()
+              //jmeter.publicarResultados()
             }
        }
      }
