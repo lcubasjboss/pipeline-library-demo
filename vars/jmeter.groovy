@@ -10,11 +10,9 @@ def ejecutar(params) {
   println "BRANCH"
 //  println scm.branches[0].name
   def gitBranch = scm.branches[0].name
-  println $gitBranch
   print gitBranch
   println "GIT REPO"
   def gitRepo = scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
-  println $gitRepo
   println gitRepo
   //println scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
   println scm.getUserRemoteConfigs()[0].getUrl()
