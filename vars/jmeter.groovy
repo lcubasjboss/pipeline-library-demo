@@ -16,6 +16,7 @@ def ejecutar(params) {
   println gitRepo
   //println scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
   println scm.getUserRemoteConfigs()[0].getUrl()
+  imprimir(gitBranch,gitRepo)
   println "Ejecutando JMeter.."
   script {
        fecha = new Date()
@@ -55,4 +56,8 @@ def subirResultados() {
     println "Subiendo Resultados .."
      script {
      }
+}
+def imprimir(branch,repo) {
+  println url
+  println branch
 }
