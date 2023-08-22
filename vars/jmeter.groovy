@@ -67,8 +67,13 @@ def subirResultados() {
   echo "output files"
   sh("ls -ltr output")
   */
-  println $BUILD_TAG
-  println BUILD_TAG
+    sh "printenv"
+  
+
+    echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}"
+                sh 'echo "I can access $BUILD_NUMBER in shell command as well."'
+  
 }
 def imprimir(branch,repo) {
   println "IMprimineod desde imprimir method"
