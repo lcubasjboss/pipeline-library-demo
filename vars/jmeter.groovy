@@ -17,7 +17,9 @@ def ejecutar(params) {
   //println scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
   //println scm.getUserRemoteConfigs()[0].getUrl()
   imprimir(gitBranch,gitRepo)
-
+  println "IMprimiendo GIT_BRANCH / GIT_URL"
+  println GIT_BRANCH
+  println GIT_URL
   def credentialID = scm.userRemoteConfigs[0].credentialsId
   println credentialID
   println "Ejecutando JMeter.."
