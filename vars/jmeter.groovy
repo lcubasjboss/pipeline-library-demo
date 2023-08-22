@@ -11,6 +11,7 @@ def ejecutar(params) {
   println scm.branches[0].name
   println "GIT REPO"
   println scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
+  println scm.getUserRemoteConfigs()[0].getUrl()
   println "Ejecutando JMeter.."
   script {
        fecha = new Date()
