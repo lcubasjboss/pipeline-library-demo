@@ -22,15 +22,15 @@ def call() {
             }
        }
      }
-    //stage('Subir resultados a Repositorio de Bitbucket') {
-    //   steps {
-    //       script{
-    //        echo "Subiendo resultados desde pipelineJmeter.groovy.."
+    stage('Subir resultados a Repositorio de Bitbucket') {
+       steps {
+           script{
+            echo "Subiendo resultados desde pipelineJmeter.groovy.."
               echo "Subiendo resultados.."
-    //        jmeter.subirResultados()
-   // }
-  //}
-    //}
+            jmeter.subirResultados()
+    }
+  }
+  }
      stage('Remover carpetas') {
        steps {
            script{
