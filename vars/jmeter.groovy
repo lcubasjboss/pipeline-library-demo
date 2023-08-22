@@ -19,7 +19,7 @@ def ejecutar(params) {
   imprimir(gitBranch,gitRepo)
 
   def credentialID = scm.userRemoteConfigs[0].credentialsId
-  println credentialdID
+  println credentialID
   println "Ejecutando JMeter.."
   script {
        fecha = new Date()
