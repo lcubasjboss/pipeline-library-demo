@@ -12,10 +12,10 @@ def ejecutar(params) {
   def gitBranch = scm.branches[0].name
   print gitBranch
   println "GIT REPO"
-  def gitRepo = scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
+  def gitRepo = scm.getUserRemoteConfigs()[0].getUrl()
   println gitRepo
   //println scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
-  println scm.getUserRemoteConfigs()[0].getUrl()
+  //println scm.getUserRemoteConfigs()[0].getUrl()
   imprimir(gitBranch,gitRepo)
   println "Ejecutando JMeter.."
   script {
@@ -58,6 +58,7 @@ def subirResultados() {
      }
 }
 def imprimir(branch,repo) {
+  println "IMprimineod desde imprimir method"
   println repo
   println branch
 }
