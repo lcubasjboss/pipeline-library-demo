@@ -61,9 +61,9 @@ def removerCarpetas() {
 }
 
 def subirResultados() {
-  println MY_VAR
-  MY_VAR = sh(returnStdout: true, script: 'echo Hola desde jmeter.groovy').trim()
-  println MY_VAR
+//  println MY_VAR
+ // MY_VAR = sh(returnStdout: true, script: 'echo Hola desde jmeter.groovy').trim()
+  // println MY_VAR
   env.MY_VAR="Second chance"
   println "Subiendo Resultados .."
   /*
@@ -71,7 +71,7 @@ def subirResultados() {
   echo "output files"
   sh("ls -ltr output")
   */
-    sh "printenv"
+//    sh "printenv"
  
  sh 'echo "I can access $BUILD_TAG"'
     echo "The build number is ${env.BUILD_NUMBER}"
