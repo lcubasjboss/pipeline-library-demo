@@ -79,7 +79,8 @@ def subirResultados() {
        //def var = BUILD_TAG-${timestamp}
   def var = BUILD_TAG+timestamp
   println var
-  
+  MY_VAR = "Hola desde jmeter.groovy"
+  println MY_VAR
 }
 def imprimir(branch,repo) {
   println "IMprimineod desde imprimir method"
