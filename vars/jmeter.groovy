@@ -60,7 +60,7 @@ def removerCarpetas() {
     }
 }
 
-def subirResultados(MY_VAR) {
+def subirResultados() {
   println MY_VAR
   MY_VAR = sh(returnStdout: true, script: 'echo Hola desde jmeter.groovy').trim()
   println MY_VAR
