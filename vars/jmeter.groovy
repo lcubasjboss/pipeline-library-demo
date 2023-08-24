@@ -64,6 +64,7 @@ def subirResultados(MY_VAR) {
   println MY_VAR
   MY_VAR = sh(returnStdout: true, script: 'echo Hola desde jmeter.groovy').trim()
   println MY_VAR
+  env.MY_VAR="Second chance"
   println "Subiendo Resultados .."
   /*
   stash 'output'
