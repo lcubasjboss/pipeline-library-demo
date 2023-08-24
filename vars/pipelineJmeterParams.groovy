@@ -49,6 +49,8 @@ def call(body) {
              jmeter.removerCarpetas()
                println MY_VAR
                println env.MY_VAR
+               println "Imprimienod valor MY_VAR: ${MY_VAR}"
+               println "Imprimienod valor env.MY_VAR: ${env.MY_VAR}"
            }
        }
     }
