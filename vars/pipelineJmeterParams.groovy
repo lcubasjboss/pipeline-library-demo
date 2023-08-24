@@ -10,7 +10,7 @@ def call(body) {
      params.each {
     println it.key + " = " + it.value
   }
-  def MY_VAR = "hello world"
+  def MY_VAR="hello world"
   pipeline {
     agent any
     stages {
@@ -48,6 +48,7 @@ def call(body) {
              echo "Removiendo carpetas.."
              jmeter.removerCarpetas()
                println MY_VAR
+               println env.MY_VAR
            }
        }
     }
