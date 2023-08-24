@@ -60,7 +60,8 @@ def removerCarpetas() {
     }
 }
 
-def subirResultados() {
+def subirResultados(env.MY_VAR) {
+  println env.MY_VAR
   println "Subiendo Resultados .."
   /*
   stash 'output'
@@ -79,8 +80,8 @@ def subirResultados() {
        //def var = BUILD_TAG-${timestamp}
   def var = BUILD_TAG+timestamp
   println var
-  MY_VAR = "Hola desde jmeter.groovy"
-  println MY_VAR
+  env.MY_VAR = "Hola desde jmeter.groovy"
+  println env.MY_VAR
 }
 def imprimir(branch,repo) {
   println "IMprimineod desde imprimir method"
