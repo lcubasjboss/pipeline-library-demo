@@ -37,7 +37,7 @@ def call(body) {
            script{
             echo "Subiendo resultados desde pipelineJmeter.groovy.."
               echo "Subiendo resultados.."
-            jmeter.subirResultados(MY_VAR)
+            jmeter.subirResultados()
     }
   }
   }
