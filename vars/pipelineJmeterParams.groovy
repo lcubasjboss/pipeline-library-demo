@@ -37,7 +37,7 @@ def call(body) {
            script{
             echo "Subiendo resultados desde pipelineJmeter.groovy.."
               echo "Subiendo resultados.."
-            jmeter.subirResultados()
+            jmeter.subirResultados(env.MYVAR)
     }
   }
   }
@@ -47,7 +47,7 @@ def call(body) {
              echo "Removiendo carpetas desde pipelineJmeter.groovy.."
              echo "Removiendo carpetas.."
              jmeter.removerCarpetas()
-               println MY_VAR
+               println env.MY_VAR
            }
        }
     }
